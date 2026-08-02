@@ -399,6 +399,30 @@ document.getElementById("userInput").value="";
   <p>Business products promoted by Brandrise Media</p>
 
   <div class="product-box"> 
+    <!-- Upload Product Image -->
+<div class="upload-area">
+
+<h2>Upload Product Image</h2>
+
+<input type="file" id="productImage" accept="image/*" capture="environment">
+
+<br><br>
+
+<img id="previewImage" src="" width="250" style="display:none; border-radius:10px;">
+
+</div>
+
+<script>
+document.getElementById("productImage").onchange = function(event){
+
+let image = document.getElementById("previewImage");
+
+image.src = URL.createObjectURL(event.target.files[0]);
+
+image.style.display = "block";
+
+};
+</script>
     <div class="product-card">
   <img src="product2.jpg" alt="Product Image">
   <h3>New Product Name</h3>
