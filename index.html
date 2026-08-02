@@ -323,8 +323,18 @@ function sendMessage() {
   else if(message.includes("digital marketing")) {
     reply = "Digital Marketing me SEO, Social Media Marketing, Ads, Content Marketing aur Branding shamil hain.";
   }
-  else {
-    reply = "Main Brandrise AI Assistant hoon. Kripya Digital Marketing, SEO, Ads, Website ya Social Media se related sawal puchhiye.";
+  else if(message.includes("kya") || message.includes("hai") || message.includes("kaise") || message.includes("batao")) {
+ reply = "Digital Marketing ek tarika hai jisme online platforms jaise Google, Facebook, Instagram aur websites ki madad se business ko grow kiya jata hai. Isme SEO, Social Media Marketing, Ads aur Content Marketing shamil hote hain.";
+}
+else if(message.includes("kya") || message.includes("hai") || message.includes("kaise") || message.includes("batao")) {
+ reply = "Digital Marketing ek tarika hai jisme online platforms jaise Google, Facebook, Instagram aur websites ki madad se business ko grow kiya jata hai. Isme SEO, Social Media Marketing, Ads aur Content Marketing shamil hote hain.";
+}
+else {
+ reply = "Main Brandrise AI Assistant hoon. Aap Digital Marketing, SEO, Ads, Website, Social Media Marketing ya Business Growth se related sawal puch sakte hain.";
+}
+ 
+
+    
   }
 
   document.getElementById("messages").innerHTML += 
