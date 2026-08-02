@@ -294,4 +294,44 @@ document.getElementById("userInput").value="";
 </script>
 
 </body>
-</html>
+</html>l 
+<div id="chatbox">
+  <div id="messages"></div>
+
+  <input id="userInput" placeholder="Digital marketing ke bare me puchhiye..." />
+  <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+function sendMessage() {
+  let input = document.getElementById("userInput");
+  let message = input.value.toLowerCase();
+
+  let reply = "";
+
+  if(message.includes("seo")) {
+    reply = "SEO ka matlab Search Engine Optimization hai. Isse website Google me rank karne me madad milti hai.";
+  } 
+  else if(message.includes("social media")) {
+    reply = "Social Media Marketing se Facebook, Instagram aur dusre platforms par business ko grow kiya jata hai.";
+  }
+  else if(message.includes("ads") || message.includes("advertisement")) {
+    reply = "Google Ads aur Facebook Ads se aap apne business ko target customers tak pahucha sakte hain.";
+  }
+  else if(message.includes("website")) {
+    reply = "Ek professional website business ki online identity hoti hai aur customers lane me madad karti hai.";
+  }
+  else if(message.includes("digital marketing")) {
+    reply = "Digital Marketing me SEO, Social Media Marketing, Ads, Content Marketing aur Branding shamil hain.";
+  }
+  else {
+    reply = "Main Brandrise AI Assistant hoon. Kripya Digital Marketing, SEO, Ads, Website ya Social Media se related sawal puchhiye.";
+  }
+
+  document.getElementById("messages").innerHTML += 
+  "<p><b>You:</b> " + input.value + "</p>" +
+  "<p><b>Brandrise AI:</b> " + reply + "</p>";
+
+  input.value = "";
+}
+</script>
