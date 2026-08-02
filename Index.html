@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brand Rise Media</title>
+<title>BrandRise Media</title>
 
 <style>
 *{
@@ -26,152 +25,146 @@ padding:20px;
 text-align:center;
 }
 
-header h1{
-font-size:40px;
+nav{
+background:#083b8a;
+padding:12px;
+text-align:center;
 }
 
-header p{
-margin-top:10px;
-font-size:18px;
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
 }
 
 .hero{
-padding:60px 20px;
+padding:70px 20px;
 text-align:center;
-background:white;
+background:linear-gradient(135deg,#0d6efd,#00c6ff);
+color:white;
 }
 
-.hero h2{
-font-size:32px;
+.hero h1{
+font-size:40px;
 margin-bottom:15px;
 }
 
 .hero p{
-font-size:18px;
+font-size:20px;
 margin-bottom:25px;
 }
 
 .btn{
 display:inline-block;
-padding:14px 28px;
-background:#0d6efd;
-color:white;
+padding:15px 30px;
+background:white;
+color:#0d6efd;
 text-decoration:none;
-border-radius:8px;
-margin:8px;
+border-radius:30px;
 font-weight:bold;
 }
 
-.services{
+section{
 padding:50px 20px;
-text-align:center;
+max-width:1000px;
+margin:auto;
 }
 
-.services h2{
-margin-bottom:30px;
-}
-
-.cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 
 .card{
 background:white;
 padding:20px;
-width:250px;
 border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+box-shadow:0 4px 10px rgba(0,0,0,.1);
 }
 
-.about{
-background:white;
-padding:50px 20px;
-text-align:center;
-}
-
-.contact{
-padding:50px 20px;
-text-align:center;
+.card h3{
+color:#0d6efd;
+margin-bottom:10px;
 }
 
 footer{
 background:#222;
 color:white;
-padding:20px;
 text-align:center;
-margin-top:30px;
+padding:20px;
+margin-top:40px;
 }
 </style>
-
 </head>
+
 <body>
 
 <header>
-<h1>Brand Rise Media</h1>
+<h1>BrandRise Media</h1>
 <p>Digital Marketing & Branding Agency</p>
 </header>
 
-<section class="hero">
-<h2>Grow Your Business Online</h2>
-<p>We help businesses with SEO, Social Media Marketing, Google Ads and Website Design.</p>
+<nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
 
-<a class="btn" href="https://wa.me/917646043389">WhatsApp Us</a>
+<div class="hero">
+<h1>Grow Your Business With BrandRise Media</h1>
+<p>SEO | Social Media Marketing | Website Development | Branding</p>
+<a class="btn" href="mailto:brandrisemedia628@gmail.com">Contact Us</a>
+</div>
 
-<a class="btn" href="tel:7646043389">Call Now</a>
+<section id="about">
+<h2>About Us</h2>
+<br>
+<p>
+BrandRise Media helps businesses grow online with modern digital marketing,
+branding, website development and social media management.
+</p>
 </section>
 
-<section class="services">
+<section id="services">
 <h2>Our Services</h2>
+<br>
 
-<div class="cards">
+<div class="services">
 
 <div class="card">
 <h3>SEO</h3>
-<p>Rank your website on Google.</p>
+<p>Rank higher on Google and get more customers.</p>
 </div>
 
 <div class="card">
-<h3>Social Media Marketing</h3>
-<p>Grow your brand on Facebook & Instagram.</p>
+<h3>Social Media</h3>
+<p>Facebook, Instagram & YouTube marketing.</p>
 </div>
 
 <div class="card">
-<h3>Google Ads</h3>
-<p>Get instant customers with Google Ads.</p>
+<h3>Website Development</h3>
+<p>Professional websites for businesses.</p>
 </div>
 
 <div class="card">
-<h3>Website Design</h3>
-<p>Professional websites for your business.</p>
+<h3>Branding</h3>
+<p>Logo, identity and complete brand growth.</p>
 </div>
 
 </div>
-
 </section>
 
-<section class="about">
-<h2>About Us</h2>
-<p>Brand Rise Media is a digital marketing agency helping businesses grow online with modern marketing strategies.</p>
-</section>
-
-<section class="contact">
-<h2>Contact Us</h2>
-
-<p><b>Phone:</b> +91 7646043389</p>
-
-<p><b>WhatsApp:</b> +91 7646043389</p>
-
-<a class="btn" href="https://wa.me/917646043389">Chat on WhatsApp</a>
-
+<section id="contact">
+<h2>Contact</h2>
+<br>
+<p>Email: brandrisemedia628@gmail.com</p>
 </section>
 
 <footer>
-
-© 2026 Brand Rise Media. All Rights Reserved.
-
+© 2026 BrandRise Media. All Rights Reserved.
 </footer>
 
 </body>
