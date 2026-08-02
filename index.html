@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BrandRise Media</title>
+<title>BrandRise Media</title> 
+  @keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 <style>
 *{
@@ -18,7 +29,9 @@ body {
   margin: 0;
   min-height: 100vh;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif; 
+  background-size: 400% 400%;
+animation: bgMove 12s ease infinite;
 
   background: linear-gradient(
     135deg,
