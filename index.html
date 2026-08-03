@@ -412,44 +412,37 @@ document.getElementById("userInput").value="";
 
 </div>
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import {
-  getStorage,
-  ref,
-  uploadBytes,
-  getDownloadURL
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
-
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
-
-const app = initializeApp(firebaseConfig);
-const storage = getStorage(app);
+<script>
+const cloudName = "sjjnfg7x";
+const uploadPreset = "Brandrise_products";
 
 document.getElementById("productImage").addEventListener("change", async (e) => {
+
   const file = e.target.files[0];
   if (!file) return;
 
-  const storageRef = ref(storage, "products/" + Date.now() + "_" + file.name);
+  let formData = new FormData();
+  formData.append("file", file);
+  formData.append("upload_preset", uploadPreset);
 
-  await uploadBytes(storageRef, file);
+  const response = await fetch(
+    `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+    {
+      method: "POST",
+      body: formData
+    }
+  );
 
-  const url = await getDownloadURL(storageRef);
+  const data = await response.json();
 
   const img = document.getElementById("previewImage");
-  img.src = url;
+  img.src = data.secure_url;
   img.style.display = "block";
 
-  alert("✅ Photo permanently save ho gayi.");
+  alert("✅ Product photo Cloudinary me save ho gayi.");
 });
 </script>
+
 
     <div class="product-card">
   <img src="product2.jpg" alt="Product Image">
