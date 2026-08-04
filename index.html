@@ -434,26 +434,34 @@ document.getElementById("productImage").addEventListener("change", async (e) => 
   );
 
   const data = await response.json();
+const preview = document.getElementById("previewImage");
+preview.src = data.secure_url;
+preview.style.display = "block";
 
-  const img = document.getElementById("previewImage");
-  img.src = data.secure_url;
-  localStorage.setItem("productImage", data.secure_url);
-  img.style.display = "block";
+const display = document.getElementById("productDisplay");
+display.src = data.secure_url;
+display.style.display = "block";
+
+localStorage.setItem("productImage", data.secure_url);
+  
 
   alert("✅ Product photo Cloudinary me save ho gayi.");
 });
   const savedImage = localStorage.getItem("productImage");
 
 if (savedImage) {
-  const img = document.getElementById("previewImage");
-  img.src = savedImage;
-  img.style.display = "block";
+  document.getElementById("previewImage").src = savedImage;
+  document.getElementById("previewImage").style.display = "block";
+
+  document.getElementById("productDisplay").src = savedImage;
+  document.getElementById("productDisplay").style.display = "block";
 }
+  
 </script>
 
 
     <div class="product-card">
-  <img src="product2.jpg" alt="Product Image">
+  <img id="productDisplay" src="" alt="Product Image" style="width:100%;display:none;">
   <h3>Premium Product Name</h3>
 
 <p>Price: ₹999</p>
