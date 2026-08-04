@@ -437,10 +437,18 @@ document.getElementById("productImage").addEventListener("change", async (e) => 
 
   const img = document.getElementById("previewImage");
   img.src = data.secure_url;
+  localStorage.setItem("productImage", data.secure_url);
   img.style.display = "block";
 
   alert("✅ Product photo Cloudinary me save ho gayi.");
 });
+  const savedImage = localStorage.getItem("productImage");
+
+if (savedImage) {
+  const img = document.getElementById("previewImage");
+  img.src = savedImage;
+  img.style.display = "block";
+}
 </script>
 
 
