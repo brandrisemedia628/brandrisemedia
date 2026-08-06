@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Brandrise Media | Digital Marketing Agency</title>
+    <meta name="keywords" content="Brandrise Media, Digital Marketing Agency, SEO Services, Social Media Marketing, Google Ads, Website Design">
+
+<meta name="author" content="Brandrise Media">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Brandrise Media | Digital Marketing Agency">
+
+<meta property="og:description" content="Grow your business with SEO, Social Media Marketing, Ads and Website Solutions.">
+
+<meta property="og:type" content="website">
 
 <meta name="description" content="Brandrise Media provides Digital Marketing, SEO, Website and Social Media solutions.">
 
@@ -82,6 +93,48 @@ footer{
     padding:15px;
 }
 </style>
+    <style>
+
+.logo{
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 5px #2563eb;
+}
+to{
+text-shadow:0 0 20px #38bdf8;
+}
+}
+
+
+.hero h1{
+animation: slide 1.5s ease;
+}
+
+@keyframes slide{
+from{
+transform:translateY(30px);
+opacity:0;
+}
+
+to{
+transform:translateY(0);
+opacity:1;
+}
+}
+
+
+.card{
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+</style>
 
 </head>
 
@@ -101,13 +154,16 @@ footer{
 
 <section class="hero">
 
-<h1>Grow Your Business With Digital Marketing</h1>
+<h1>🚀 Brandrise Media</h1>
+
+<h2>Grow Your Business With Powerful Digital Marketing</h2>
 
 <p>
-We help businesses grow with SEO, Social Media Marketing, Ads and Website Solutions.
+We help businesses grow online with SEO, Social Media Marketing,
+Google Ads, Website Design and Brand Growth Solutions.
 </p>
 
-<a class="btn" href="#">Get Started</a>
+<a class="btn" href="#">Start Your Growth Journey</a>
 
 </section>
 
@@ -124,13 +180,351 @@ Professional solutions for online growth and brand building.
 </div>
 
 </section>
+<section>
 
+<h2>Our Services</h2>
+
+<div class="card">
+<h3>SEO (Search Engine Optimization)</h3>
+<p>
+Google search ranking improve karne aur website traffic badhane ke liye SEO solutions.
+</p>
+</div>
+
+
+<div class="card">
+<h3>Social Media Marketing</h3>
+<p>
+Facebook, Instagram aur social media par brand growth ke liye marketing services.
+</p>
+</div>
+
+
+<div class="card">
+<h3>Google Ads & Online Advertising</h3>
+<p>
+Target customers tak pahuchne ke liye effective online advertising campaigns.
+</p>
+</div>
+
+
+<div class="card">
+<h3>Website Design</h3>
+<p>
+Business ke liye professional aur mobile-friendly websites banane ki service.
+</p>
+</div>
+
+</section>
+    
 
 <footer>
 © 2026 Brandrise Media. All Rights Reserved.
 </footer>
 
+<!-- Brandrise AI Assistant -->
 
+<div id="chatButton" onclick="openChat()">
+💬
+</div>
+
+<div id="chatBox">
+
+<div id="chatHeader">
+Brandrise AI Assistant
+<span onclick="closeChat()">✖</span>
+</div>
+
+<div id="chatMessages">
+<p><b>AI:</b> Main Brandrise AI Assistant hoon. Digital Marketing, SEO, Ads, Website ya Social Media se related sawal puchhiye.</p>
+</div>
+
+<div id="chatInput">
+<input type="text" id="userMessage" placeholder="Apna sawal likhiye...">
+<button onclick="sendMessage()">Send</button>
+</div>
+
+</div>
+
+
+<style>
+
+#chatButton{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#2563eb;
+color:white;
+font-size:25px;
+padding:15px;
+border-radius:50%;
+cursor:pointer;
+}
+
+#chatBox{
+display:none;
+position:fixed;
+right:20px;
+bottom:80px;
+width:300px;
+background:white;
+border-radius:10px;
+box-shadow:0 0 15px #999;
+overflow:hidden;
+}
+
+#chatHeader{
+background:#111827;
+color:white;
+padding:15px;
+font-weight:bold;
+}
+
+#chatHeader span{
+float:right;
+cursor:pointer;
+}
+
+#chatMessages{
+height:250px;
+padding:10px;
+overflow:auto;
+font-size:14px;
+}
+
+#chatInput{
+display:flex;
+border-top:1px solid #ddd;
+}
+
+#chatInput input{
+width:70%;
+padding:10px;
+border:0;
+}
+
+#chatInput button{
+width:30%;
+background:#2563eb;
+color:white;
+border:0;
+}
+
+</style>
+    <script>
+
+function openChat(){
+document.getElementById("chatBox").style.display="block";
+}
+
+function closeChat(){
+document.getElementById("chatBox").style.display="none";
+}
+
+
+function sendMessage(){
+
+let msg = document.getElementById("userMessage").value.toLowerCase();
+
+let reply="";
+
+if(msg.includes("seo")){
+reply="SEO se website ki Google ranking aur organic traffic improve hota hai.";
+
+}
+
+else if(msg.includes("digital marketing")){
+reply="Digital Marketing me SEO, Social Media Marketing, Google Ads aur Online Branding shamil hai.";
+
+}
+
+else if(msg.includes("google ads") || msg.includes("ads")){
+reply="Google Ads se aap apne target customers tak jaldi pahuch sakte hain.";
+
+}
+
+else if(msg.includes("website")){
+reply="Brandrise Media professional website design aur development solutions provide karta hai.";
+
+}
+
+else if(msg.includes("social media")){
+reply="Social Media Marketing se Facebook, Instagram aur dusre platforms par brand grow hota hai.";
+
+}
+
+else{
+reply="Kripya Digital Marketing, SEO, Ads, Website ya Social Media se related sawal puchhiye.";
+}
+
+
+document.getElementById("chatMessages").innerHTML +=
+"<p><b>You:</b> "+msg+"</p>"+
+"<p><b>AI:</b> "+reply+"</p>";
+
+
+document.getElementById("userMessage").value="";
+
+}
+
+</script>
+    <!-- Product Gallery Section -->
+
+<section>
+
+<h2>Our Products</h2>
+
+<div id="productGallery">
+
+<div class="card">
+<img src="" alt="Product Image" style="width:100%;border-radius:10px;">
+<h3>Product Name</h3>
+<p>Price: ₹0</p>
+<button class="btn">Contact Seller</button>
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+#productGallery{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+#productGallery .card{
+width:280px;
+}
+
+#productGallery img{
+height:200px;
+object-fit:cover;
+}
+
+ @media(max-width:600px){
+
+.logo{
+font-size:26px;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+nav a{
+display:inline-block;
+margin:5px;
+}
+
+.card{
+margin:10px;
+width:auto;
+}
+
+#chatBox{
+width:90%;
+right:5%;
+}
+
+#productGallery .card{
+width:90%;
+}
+
+}   
+</style>
+    <!-- Product Upload -->
+
+<section>
+
+<h2>Upload Product Image</h2>
+
+<input type="file" id="productImage">
+
+<br><br>
+
+<input type="text" id="productName" placeholder="Product Name">
+
+<br><br>
+
+<input type="text" id="productPrice" placeholder="Product Price">
+
+<br><br>
+
+<button class="btn" onclick="uploadProduct()">Upload Product</button>
+
+</section>
+
+
+<script>
+
+function uploadProduct(){
+
+let file = document.getElementById("productImage").files[0];
+
+let formData = new FormData();
+
+formData.append("file", file);
+
+formData.append("upload_preset", "YOUR_UPLOAD_PRESET");
+
+fetch("https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload",
+{
+method:"POST",
+body:formData
+})
+
+.then(response=>response.json())
+
+.then(data=>{
+
+alert("Product image uploaded successfully!");
+
+console.log(data.secure_url);
+
+});
+
+}
+
+</script>
+    <script>
+
+function showProduct(imageUrl, name, price){
+
+document.getElementById("productGallery").innerHTML +=
+
+`
+<div class="card">
+<img src="${imageUrl}" style="width:100%;border-radius:10px;">
+<h3>${name}</h3>
+<p>Price: ₹${price}</p>
+<button class="btn">Contact Seller</button>
+</div>
+`;
+
+}
+
+</script>
+    <script>
+
+function contactSeller(){
+
+let phone = "91XXXXXXXXXX"; 
+let message = "Hello, mujhe aapke product ke baare me jankari chahiye.";
+
+let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+window.open(url, "_blank");
+
+}
+
+</script>
 </body>
 </html>   
 
