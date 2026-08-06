@@ -137,52 +137,44 @@ transform:translateY(-8px);
 </style>
 
 </head>
-
-<body>
-<div id="loader">
-Brandrise Media
-</div>
 <section id="services">
 <h2>Our Digital Marketing Services</h2>
 
-<div class="service-box">
-
-<div>
+<div class="card">
 <h3>Social Media Marketing</h3>
 <p>Facebook, Instagram marketing aur business growth.</p>
-<button onclick="showForm()">Get Started</button>
+<button class="btn" onclick="showForm()">Get Started</button>
 </div>
 
-<div>
+<div class="card">
 <h3>SEO</h3>
 <p>Google ranking aur website visibility badhana.</p>
-<button onclick="showForm()">Get Started</button>
+<button class="btn" onclick="showForm()">Get Started</button>
 </div>
 
-<div>
+<div class="card">
 <h3>Website Development</h3>
 <p>Professional business website banana.</p>
-<button onclick="showForm()">Get Started</button>
+<button class="btn" onclick="showForm()">Get Started</button>
 </div>
 
-<div>
+<div class="card">
 <h3>Google Ads</h3>
 <p>Online advertising se customers lana.</p>
-<button onclick="showForm()">Get Started</button>
-</div>
-
+<button class="btn" onclick="showForm()">Get Started</button>
 </div>
 </section>
 
-<section id="contact-form" style="display:none;">
+<section id="contact-form" style="display:none;text-align:center;padding:30px;">
 <h2>Get Started With Brandrise Media</h2>
 
-<input type="text" placeholder="Your Name">
-<input type="tel" placeholder="Mobile Number">
-<input type="text" placeholder="Your Business">
+<input type="text" placeholder="Your Name"><br><br>
 
-<button>Submit</button>
+<input type="tel" placeholder="Mobile Number"><br><br>
 
+<input type="text" placeholder="Your Business"><br><br>
+
+<button class="btn">Submit</button>
 </section>
 
 <script>
@@ -190,6 +182,8 @@ function showForm(){
 document.getElementById("contact-form").style.display="block";
 }
 </script>
+<body>
+
 <style>
 
 #loader{
