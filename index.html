@@ -659,20 +659,69 @@ console.log(data.secure_url);
 }
 
 </script>
-    <script>
+    <script type="module">
 
-function showProduct(imageUrl, name, price){
+import { 
+  initializeApp 
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-document.getElementById("productGallery").innerHTML +=
+import {
+  getFirestore,
+  collection,
+  addDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-`
-<div class="card">
-<img src="${imageUrl}" style="width:100%;border-radius:10px;">
-<h3>${name}</h3>
-<p>Price: ₹${price}</p>
-<button class="btn">Contact Seller</button>
-</div>
-`;
+
+// Firebase Config yaha lagana hai
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID"
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+
+
+window.uploadProduct = function(){
+
+let file = document.getElementById("productImage").files[0];
+
+let formData = new FormData();
+
+formData.append("file", file);
+
+formData.append("upload_preset", "YOUR_UPLOAD_PRESET");
+
+
+fetch("https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload",
+{
+method:"POST",
+body:formData
+})
+
+.then(response=>response.json())
+
+.then(async data=>{
+
+
+await addDoc(collection(db,"photos"),{
+
+url:data.secure_url,
+
+time:new Date()
+
+});
+
+
+alert("Photo uploaded successfully!");
+
+
+});
+
 
 }
 
@@ -691,6 +740,141 @@ window.open(url, "_blank");
 }
 
 </script>
+ <script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import { 
+getFirestore,
+collection,
+addDoc,
+getDocs,
+query,
+orderBy
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+const firebaseConfig = {
+  apiKey: "APNA_API_KEY",
+  authDomain: "APNA_AUTH_DOMAIN",
+  projectId: "APNA_PROJECT_ID"
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+
+// Photos dikhane ka function
+
+async function loadPhotos(){
+
+const q = query(
+collection(db,"photos"),
+orderBy("time","desc")
+);
+
+const snap = await getDocs(q);
+
+let box = document.getElementById("photoFeed");
+
+box.innerHTML="";
+
+snap.forEach((doc)=>{
+
+let data = doc.data();
+
+box.innerHTML += `
+<div class="post">
+<img src="${data.url}">
+</div>
+`;
+
+});
+
+}
+
+loadPhotos();
+
+</script> 
+  <section class="brandrise-posts">
+<h2>Latest Photos</h2>
+
+<div id="photoFeed"></div>
+
+</section>
+
+
+<style>
+.brandrise-posts{
+padding:20px;
+}
+
+#photoFeed .post{
+margin-bottom:25px;
+}
+
+#photoFeed img{
+width:100%;
+border-radius:15px;
+}
+</style>
+
+
+<script type="module">
+
+import {
+getFirestore,
+collection,
+getDocs,
+query,
+orderBy
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+const db = getFirestore();
+
+
+async function showPhotos(){
+
+const q = query(
+collection(db,"photos"),
+orderBy("time","desc")
+);
+
+
+const snap = await getDocs(q);
+
+let feed = document.getElementById("photoFeed");
+
+
+feed.innerHTML="";
+
+
+snap.forEach((doc)=>{
+
+let photo = doc.data();
+
+
+feed.innerHTML += `
+
+<div class="post">
+<img src="${photo.url}">
+</div>
+
+`;
+
+});
+
+
+}
+
+
+showPhotos();
+
+
+</script>  
 </body>
 </html>   
 
