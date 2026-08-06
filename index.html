@@ -208,14 +208,64 @@ font-size:12px;
 font-weight:normal;
 margin-top:5px;
 }
-  
+  .hero{
+    background: linear-gradient(135deg,#0f172a,#2563eb);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero-content{
+    max-width:800px;
+    margin:auto;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.btn{
+    background:#ff9800;
+    color:#fff;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#e68900;
+    transform:scale(1.05);
+}
 </style>
 <header>
 <div class="logo">
 🚀 Brandrise Media
 <span>Digital Marketing Agency</span>
 </div>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Grow Your Business With Brandrise Media</h1>
+    <p>
+      SEO, Social Media Marketing, Google Ads, Website Development
+      and Complete Digital Marketing Solutions.
+    </p>
 
+    <button class="btn" onclick="showForm()">
+      Get Started
+    </button>
+  </div>
+</section>
+    
 <nav>
 <a href="#home">Home</a>
 <a href="#services">Services</a>
