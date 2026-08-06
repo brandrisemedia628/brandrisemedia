@@ -142,7 +142,54 @@ transform:translateY(-8px);
 <div id="loader">
 Brandrise Media
 </div>
+<section id="services">
+<h2>Our Digital Marketing Services</h2>
 
+<div class="service-box">
+
+<div>
+<h3>Social Media Marketing</h3>
+<p>Facebook, Instagram marketing aur business growth.</p>
+<button onclick="showForm()">Get Started</button>
+</div>
+
+<div>
+<h3>SEO</h3>
+<p>Google ranking aur website visibility badhana.</p>
+<button onclick="showForm()">Get Started</button>
+</div>
+
+<div>
+<h3>Website Development</h3>
+<p>Professional business website banana.</p>
+<button onclick="showForm()">Get Started</button>
+</div>
+
+<div>
+<h3>Google Ads</h3>
+<p>Online advertising se customers lana.</p>
+<button onclick="showForm()">Get Started</button>
+</div>
+
+</div>
+</section>
+
+<section id="contact-form" style="display:none;">
+<h2>Get Started With Brandrise Media</h2>
+
+<input type="text" placeholder="Your Name">
+<input type="tel" placeholder="Mobile Number">
+<input type="text" placeholder="Your Business">
+
+<button>Submit</button>
+
+</section>
+
+<script>
+function showForm(){
+document.getElementById("contact-form").style.display="block";
+}
+</script>
 <style>
 
 #loader{
@@ -878,7 +925,8 @@ feed.innerHTML += `
 showPhotos();
 
 
-</script>  
+</script> 
+    
 </body>
 </html>   
 
